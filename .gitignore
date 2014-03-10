@@ -7,3 +7,7 @@
 /node_modules
 /lib
 /data
+broadcast.access.log
+broadcast.error.log
+broadcast.conf
+
