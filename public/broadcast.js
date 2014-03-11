@@ -528,7 +528,7 @@ require.define("/controller.coffee", function (require, module, exports, __dirna
 
   view = require('./view');
 
-  url = 'http://localhost:1990';
+  url = 'http://chat.allmende.io';
 
   socket = {};
 
