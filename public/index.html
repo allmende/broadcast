@@ -1,84 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Broadcast.TheOutpost.io</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is a demo of the basic Broadcast Chat Application used by The Outpost and The Smallest Federated Wiki.">
-    <meta name="author" content="Nicholas Hallahan">
-    <link id='favicon' href='/outpost-favicon.png' rel='icon' type='image/png'>
-    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="theme/granite.css" rel="stylesheet">
-    <link href="broadcast.css" rel="stylesheet">
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="span8">
-          <div class="page-header">
-            <img src="/the-outpost-logo.jpg" alt="The Outpost" />
-            <h1>Broadcast.<a href="http://theoutpost.io/">TheOutpost.io</a> <small>Real-Time NodeJS Chat Application</small></h1>
-          </div>
-          <div class="row">
-            <div class="span4 columns">
-              <h2>The Concept</h2>
-              <p>
-                Your browser can send any data of any form to the server, and the server does not necessarily need to keep it. It can simply be a middle man that relays data you send out to everyone currenltly connected. It has a new role: instead of archiving information, it broadcasts information.
-              </p>
-              <p>
-                Imagine how cool this will be when you can send files...
-              </p>
-              <p>
-                Try it out! Click on the text box and leave a message. See people type as they go... 
-              <hr/>
-              <h3>About</h3>
-              <p>
-                This web application uses <a href="http://socket.io/">socket.io</a> to create full-duplex communication between the client and the server. All data is stored as .json files on the server and is loaded into memory by <a href="http://nodejs.org/">NodeJS</a>. Your typing is simply relayed to other connected users, but once you hit enter, it is recorded by the server.
-              </p>
+    <head>
+        <meta charset="utf-8">
+        <title>Broadcast.TheOutpost.io</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is a demo of the basic Broadcast Chat Application used by The Outpost and The Smallest Federated Wiki.">
+        <meta name="author" content="Nicholas Hallahan">
+        <link id='favicon' href='/outpost-favicon.png' rel='icon' type='image/png'>
+        <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="theme/granite.css" rel="stylesheet">
+        <link href="broadcast.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>          
+        <div class="span4 columns broadcast-col">
+            <!-- online accordion -->
+            <div class="accordion" id="broadcast-online">
+                <div class="accordion-group" id="broadcast-online-tmpl">
+                    Retrieving data from server...
+                </div>
             </div>
-            <div class="span4">
-              <h3>How It Works</h3>
-              <p>
-                You can put a stack on any <a href="https://github.com/WardCunningham/Smallest-Federated-Wiki">Smallest Federated Wiki</a> page, and all of the content broadcast on each individual stack is independent from the others. This app is run along side a SFW farm, and your username is associated with all of the stacks created within a farm.
-              </p>
-              <p>
-                On the other hand, you can simply put this on any web server. This demo here is stand-alone. You can integrate it into your page, or you can have an iframe that refers to another server.
-              </p>
-              <hr/>
-              <h3>Source</h3>
-              <p>
-                This project is freely available on github. Feel free to fork it, use it, and make changes...
-              </p>
-              <a href="https://github.com/hallahan/broadcast" target="_blank" class="btn">Source Code</a>
-            </div>
-          </div>
+            <!-- broadcasts accordion -->
+            <div class="accordion" id="broadcasts"></div>
         </div>
-          
-       <div class="span4 columns broadcast-col">
-          <!-- online accordion -->
-          <div class="accordion" id="broadcast-online">
-            <div class="accordion-group" id="broadcast-online-tmpl">
-              Retrieving data from server...
-            </div>
-          </div>
-          <!-- broadcasts accordion -->
-          <div class="accordion" id="broadcasts"></div>
-        </div>
-      </div>
-    </div> <!-- /container -->
 
 
-    <!-- javascript libraries used -->
-    <script src="lib/jquery-1.7.2.min.js"></script>
-    <script src="lib/jquery-ui-1.8.20.custom.min.js"></script>
-    
-    <!-- the real deal -->
-    <script src="broadcast.js"></script>
+        <!-- javascript libraries used -->
+        <script src="lib/jquery-1.7.2.min.js"></script>
+        <script src="lib/jquery-ui-1.8.20.custom.min.js"></script>
 
-  </body>
+        <!-- the real deal -->
+        <script src="broadcast.js"></script>
+
+    </body>
 </html>
